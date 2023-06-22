@@ -2,6 +2,7 @@
 
 /**
 * run_code - function to execute the code
+* @string: line comand
 * @stack: head of stack
 * @counter: line number
 *
