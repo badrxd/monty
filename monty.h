@@ -54,6 +54,8 @@ void f_pall(stack_t **head, unsigned int line_number);
 void pint_f(stack_t **head, unsigned int counter);
 void pop_f(stack_t **head, unsigned int counter);
 void swap_f(stack_t **head, unsigned int counter);
+void add_f(stack_t **head, unsigned int counter);
+void f_nop(stack_t **head, unsigned int counter);
 
 
 
