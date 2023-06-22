@@ -9,7 +9,8 @@
 int run_code(char *content, stack_t **head, unsigned int counter)
 {
 	instruction_t opst[] = {
-				{"push", f_push}, {"pall", f_pall},
+				{"push", f_push}, {"pall", f_pall}, {"pint", pint_f},
+				{"pop", pop_f}, {"swap", swap_f},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
