@@ -56,7 +56,8 @@ void pop_f(stack_t **head, unsigned int counter);
 void swap_f(stack_t **head, unsigned int counter);
 void add_f(stack_t **head, unsigned int counter);
 void nop_f(stack_t **head, unsigned int counter);
-
+void sub_f(stack_t **head, unsigned int counter);
+void div_f(stack_t **head, unsigned int counter);
 
 
 int run_code(char *content, stack_t **head, unsigned int counter);
