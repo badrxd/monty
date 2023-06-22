@@ -17,8 +17,9 @@ int run_code(char *string, stack_t **stack, unsigned int counter)
 		{NULL, NULL}
 	};
 	cmd = strtok(string, " \n\t");
-	if (cmd == NULL)
-		return (NULL);
+	if (cmd && cmd[0] == '#')
+		return (0);
+
 	value = strtok(NULL, " \n\t");
 	var.ops_arg = value ? atoi(value) : -1;
 
@@ -31,7 +32,7 @@ int run_code(char *string, stack_t **stack, unsigned int counter)
 		}
 		i++;
 	}
-	if (ops_code[i].opcode == NULL)
+	if (cmd && ops_code[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", counter, cmd);
 		fclose(var.file);
@@ -39,5 +40,5 @@ int run_code(char *string, stack_t **stack, unsigned int counter)
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	return (0);
+	return (1);
 }
