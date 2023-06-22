@@ -59,6 +59,7 @@ void nop_f(stack_t **head, unsigned int counter);
 void sub_f(stack_t **head, unsigned int counter);
 void div_f(stack_t **head, unsigned int counter);
 void mul_f(stack_t **head, unsigned int counter);
+void mod_f(stack_t **head, unsigned int counter);
 
 int run_code(char *content, stack_t **head, unsigned int counter);
 void free_stack(stack_t *head);
