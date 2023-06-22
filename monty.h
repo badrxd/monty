@@ -51,6 +51,12 @@ typedef struct instruction_s
 
 void f_push(stack_t **head, unsigned int line_number);
 void f_pall(stack_t **head, unsigned int line_number);
+void pint_f(stack_t **head, unsigned int counter);
+void pop_f(stack_t **head, unsigned int counter);
+void swap_f(stack_t **head, unsigned int counter);
+
+
+
 int run_code(char *content, stack_t **head, unsigned int counter);
 void free_stack(stack_t *head);
 void add_node(stack_t **head, int n);
