@@ -17,8 +17,8 @@ int run_code(char *string, stack_t **stack, unsigned int counter)
 		{NULL, NULL}
 	};
 	cmd = strtok(string, " \n\t");
-	if (!cmd)
-		return (0);
+	if (cmd == NULL)
+		return (NULL);
 	value = strtok(NULL, " \n\t");
 	var.ops_arg = value ? atoi(value) : -1;
 
