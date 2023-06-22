@@ -1,45 +1,37 @@
-#include"monty.h"
-
+#include "monty.h"
 /**
-* run_code - function to execute the code
-* @string: line comand
-* @stack: head of stack
-* @counter: line number
-*
-* Return: 0 on success
+* run_code - get with command and run it
+* @head: head linked list - stack
+* @counter: line_counter
+* @content: line content
+* Return: no return
 */
-int run_code(char *string, stack_t **stack, unsigned int counter)
+int run_code(char *content, stack_t **head, unsigned int counter)
 {
-	char *cmd, *value;
-	int i = 0;
+	instruction_t opst[] = {
+				{"push", f_push}, {"pall", f_pall},
+				{NULL, NULL}
+				};
+	unsigned int i = 0;
+	char *cmd;
 
-	instruction_t ops_code[] = {
-		{"push", push_f}, {"pall", pall_f},
-		{NULL, NULL}
-	};
-	cmd = strtok(string, " \n\t");
+	cmd = strtok(content, " \n\t");
 	if (cmd && cmd[0] == '#')
 		return (0);
-
-	value = strtok(NULL, " \n\t");
-	var.ops_arg = value ? atoi(value) : -1;
-
-	while (ops_code[i].opcode)
+	var.value = strtok(NULL, " \n\t");
+	while (opst[i].opcode && cmd)
 	{
-		if (strcmp(cmd, ops_code[i].opcode) == 0)
-		{
-			ops_code[i].f(stack, counter);
+		if (strcmp(cmd, opst[i].opcode) == 0)
+		{	opst[i].f(head, counter);
 			return (0);
 		}
 		i++;
 	}
-	if (cmd && ops_code[i].opcode == NULL)
-	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", counter, cmd);
+	if (cmd && opst[i].opcode == NULL)
+	{ fprintf(stderr, "L%d: unknown instruction %s\n", counter, cmd);
 		fclose(var.file);
-		free(var.string);
-		free_stack(stack);
-		exit(EXIT_FAILURE);
-	}
+		free(content);
+		free_stack(*head);
+		exit(EXIT_FAILURE); }
 	return (1);
 }
