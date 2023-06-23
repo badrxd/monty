@@ -64,7 +64,7 @@ void pchar_f(stack_t **head, unsigned int counter);
 void pstr_f(stack_t **head, unsigned int counter);
 void rotl_f(stack_t **head,  __attribute__((unused)) unsigned int counter);
 void rotr_f(stack_t **head, __attribute__((unused)) unsigned int counter);
-
+void stack_f(stack_t **head, unsigned int counter);
 
 
 

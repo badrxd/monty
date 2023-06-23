@@ -13,7 +13,8 @@ int run_code(char *content, stack_t **head, unsigned int counter)
 				{"pop", pop_f}, {"swap", swap_f}, {"add", add_f},
 				{"nop", nop_f}, {"sub", sub_f}, {"div", div_f},
 				{"mul", mul_f}, {"mod", mod_f}, {"pchar", pchar_f},
-				{"pstr", pstr_f}, {"rotl",rotl_f}, {"rotr", rotr_f},
+				{"pstr", pstr_f}, {"rotl", rotl_f}, {"rotr", rotr_f},
+				{"stack", stack_f},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
