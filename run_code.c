@@ -14,7 +14,7 @@ int run_code(char *content, stack_t **head, unsigned int counter)
 				{"nop", nop_f}, {"sub", sub_f}, {"div", div_f},
 				{"mul", mul_f}, {"mod", mod_f}, {"pchar", pchar_f},
 				{"pstr", pstr_f}, {"rotl", rotl_f}, {"rotr", rotr_f},
-				{"stack", stack_f},
+				{"stack", stack_f}, {"queue", f_queue},
 				{NULL, NULL}
 				};
 	unsigned int i = 0;
