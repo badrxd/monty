@@ -15,7 +15,7 @@ void pchar_f(stack_t **head, unsigned int counter)
 	{
 		fprintf(stderr, "L%d: can't pchar, stack empty\n", counter);
 		fclose(var.file);
-		free(var.art_line);
+		free(var.srt_line);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
